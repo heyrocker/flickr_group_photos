@@ -1,0 +1,8 @@
+;$Id:
+name = Flickr group photos
+description = Query Flickr group photos using Views
+dependencies[] = views
+dependencies[] = flickrapi
+core = 7.x
+package = Media
+
