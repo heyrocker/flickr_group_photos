@@ -13,3 +13,18 @@ function flickr_group_photos_views_plugins() {
   return $plugin;
 }
 
+/**
+ * Implementation of hook_views_data().
+ */
+function flickr_group_photos_views_data() {
+  $data = array();
+
+  // Base data
+  $data['flickr_group_photos']['table']['group']  = t('Flickr Groups');
+  $data['flickr_group_photos']['table']['base'] = array(
+    'title' => t('Flickr Groups'),
+    'help' => t('Query Flickr groups.'),
+    'query class' => 'flickr_group_photos_plugin_query'
+  );
+  return $data;
+}
