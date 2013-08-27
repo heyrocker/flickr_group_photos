@@ -7,3 +7,4 @@ core = 7.x
 package = Media
 
 files[] = handlers/flickr_group_photos_handler_field.inc
+files[] = plugins/flickr_group_photos_plugin_query.inc
