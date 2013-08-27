@@ -26,5 +26,15 @@ function flickr_group_photos_views_data() {
     'help' => t('Query Flickr groups.'),
     'query class' => 'flickr_group_photos_plugin_query'
   );
+
+  // Fields
+  $data['flickr_group_photos']['title'] = array(
+    'title' => t('Title'),
+    'help' => t('The title of this photo.'),
+    'field' => array(
+      'handler' => 'flickr_group_photos_field',
+    ),
+  );
+
   return $data;
 }
