@@ -6,3 +6,4 @@ dependencies[] = flickrapi
 core = 7.x
 package = Media
 
+files[] = handlers/flickr_group_photos_handler_field.inc
