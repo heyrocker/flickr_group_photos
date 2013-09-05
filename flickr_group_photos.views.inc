@@ -32,7 +32,7 @@ function flickr_group_photos_views_data() {
     'title' => t('Title'),
     'help' => t('The title of this photo.'),
     'field' => array(
-      'handler' => 'flickr_group_photos_field',
+      'handler' => 'flickr_group_photos_handler_field',
     ),
   );
 
