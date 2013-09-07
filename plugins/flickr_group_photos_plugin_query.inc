@@ -20,6 +20,12 @@ class flickr_group_photos_plugin_query extends views_plugin_query {
       $photo_id = $photo['id'];
       $info = $flickr->photos_getInfo($photo_id);
       $row->title = $info['photo']['title'];
+      $sizes = $flickr->photos_getSizes($photo_id);
+      foreach ($sizes as $size) {
+        if ($size['label'] == 'Original') {
+          $row->image = $size['source'];
+        }
+      }
       $view->result[] = $row;
     }
   }
