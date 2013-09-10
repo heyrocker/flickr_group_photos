@@ -14,7 +14,7 @@ class flickr_group_photos_plugin_query extends views_plugin_query {
 
   function execute(&$view) {
     $flickr = flickrapi_phpFlickr();
-    $photos = $flickr->groups_pools_getPhotos($this->args['group_id'], NULL, NULL, NULL, NULL, $this->options['num_photos']);
+    $photos = $flickr->groups_pools_getPhotos($this->options['group_id'], NULL, NULL, NULL, NULL, $this->options['num_photos']);
     foreach ($photos['photos']['photo'] as $photo) {
       $row = new stdClass;
       $photo_id = $photo['id'];
