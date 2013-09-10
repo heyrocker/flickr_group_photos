@@ -46,7 +46,7 @@ class flickr_group_photos_field_image extends views_handler_field {
     	  'path' => $values->{$this->field},
     	  'style_name' => $this->options['image_style'],
   	);
-  	$return = theme('imagecache_external', $image_info);
+  	return theme('imagecache_external', $image_info);
   }
 
 }
