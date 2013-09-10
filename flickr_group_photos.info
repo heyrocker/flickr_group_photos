@@ -3,6 +3,7 @@ name = Flickr group photos
 description = Query Flickr group photos using Views
 dependencies[] = views
 dependencies[] = flickrapi
+dependencies[] = imagecache_external
 core = 7.x
 package = Media
 
