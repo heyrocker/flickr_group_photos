@@ -56,12 +56,6 @@ class flickr_group_photos_plugin_query extends views_plugin_query {
   function options_form(&$form, &$form_state) {
     $form = parent:: options_form($form, $form_state);
 
-    $form['num_photos'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Number of photos'),
-      '#description' => t('The number of photos that should be returned from the specified group.'),
-      '#default_value' => $this->options['num_photos'],
-    );
     $form['group_id'] = array(
       '#type' => 'textfield',
       '#title' => t('Flickr group ID'),
