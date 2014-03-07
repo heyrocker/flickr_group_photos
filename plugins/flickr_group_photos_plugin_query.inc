@@ -13,8 +13,18 @@ class flickr_group_photos_plugin_query extends views_plugin_query {
   function query($get_count = FALSE) {  }
 
   function execute(&$view) {
+    // Setup pager
+    $view->init_pager();
+    if ($this->pager->use_pager()) {
+      $this->pager->set_current_page($view->current_page);
+    }
+
     $flickr = flickrapi_phpFlickr();
-    $photos = $flickr->groups_pools_getPhotos($this->options['group_id'], NULL, NULL, NULL, NULL, $this->options['num_photos']);
+    $photos = $flickr->groups_pools_getPhotos($this->options['group_id'], NULL, NULL, NULL, NULL, $this->pager->options['items_per_page'], $this->pager->current_page+1);
+
+    $this->pager->total_items = $photos['photos']['total'];
+    $this->pager->update_page_info();
+
     foreach ($photos['photos']['photo'] as $photo) {
       $row = new stdClass;
       $photo_id = $photo['id'];
