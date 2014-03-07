@@ -35,6 +35,13 @@ function flickr_group_photos_views_data() {
       'handler' => 'flickr_group_photos_handler_field',
     ),
   );
+  $data['flickr_group_photos']['source_url'] = array(
+    'title' => t('Source URL'),
+    'help' => t('The URL to the original size of this photo.'),
+    'field' => array(
+      'handler' => 'flickr_group_photos_field_text',
+    ),
+  );
   $data['flickr_group_photos']['image'] = array(
     'title' => t('Image'),
     'help' => t('The actual image from Flickr.'),
